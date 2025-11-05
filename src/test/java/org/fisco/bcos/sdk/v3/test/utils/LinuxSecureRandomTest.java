@@ -111,17 +111,10 @@ public class LinuxSecureRandomTest {
                 }
             }
             
-            // On Linux, the provider should be registered
-            if (isLinuxSystem) {
-                Assert.assertTrue("LinuxSecureRandom provider should be registered", found);
-            }
+            // The provider should be registered on Linux systems
+            Assert.assertTrue("LinuxSecureRandom provider should be registered", found);
         } catch (ClassNotFoundException e) {
             Assert.fail("LinuxSecureRandom class should exist");
-        } catch (ExceptionInInitializerError e) {
-            // On some systems, initialization might fail, which is acceptable
-            if (!isLinuxSystem) {
-                Assert.assertTrue(true);
-            }
         }
     }
 

@@ -288,12 +288,6 @@ public class TopicToolsTest {
         topicTools.byteNToTopic(tooLarge);
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void testByteNToTopicWith100Bytes() {
-        byte[] tooLarge = new byte[100];
-        topicTools.byteNToTopic(tooLarge);
-    }
-
     @Test
     public void testByteNToTopicWithBoundary() {
         // Test with exactly 32 bytes (boundary condition)

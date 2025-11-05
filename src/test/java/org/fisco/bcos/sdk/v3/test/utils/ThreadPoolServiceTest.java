@@ -118,7 +118,8 @@ public class ThreadPoolServiceTest {
 
     @Test
     public void testStopThreadPool() {
-        ExecutorService pool = new ThreadPoolService("test-static-stop", 10).getThreadPool();
+        ThreadPoolService tempService = new ThreadPoolService("test-static-stop", 10);
+        ExecutorService pool = tempService.getThreadPool();
         
         Assert.assertFalse(pool.isShutdown());
         
